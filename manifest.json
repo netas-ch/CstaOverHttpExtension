@@ -1,0 +1,62 @@
+{
+    "name": "Tel-Links: CSTA over HTTP",
+    "description": "open tel-protocol links with a «CSTA over HTTP» - compatible phone",
+    "homepage_url": "https://github.com/netas-ch/CstaOverHttpExtension",
+    "version": "1.1",
+
+    "manifest_version": 2,
+
+    "browser_action": {
+        "default_icon": {
+            "16": "icons/ico_light_16.png",
+            "32": "icons/ico_light_32.png",
+            "48": "icons/ico_light_48.png",
+            "96": "icons/ico_light_96.png"
+        },
+        "theme_icons": [{
+                "dark": "icons/ico_light_32.png",
+                "light": "icons/ico_dark_32.png",
+                "size": 32
+            }, {
+                "dark": "icons/ico_light_16.png",
+                "light": "icons/ico_dark_16.png",
+                "size": 16
+            }
+        ],
+        "default_title": "Make a call"
+    },
+
+    "icons": {
+        "48": "icons/ico_light_48.png",
+        "96": "icons/ico_light_96.png",
+        "32": "icons/ico_light_32.png",
+        "16": "icons/ico_light_16.png"
+    },
+
+    "background": {
+        "scripts": [
+            "js/background.js"
+        ]
+    },
+
+    "options_ui": {
+        "page": "options.html",
+        "browser_style": true
+    },
+
+    "permissions": ["storage", "<all_urls>"],
+
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "CstaOverHttpExtension@netas.ch",
+            "strict_min_version": "0.1"
+        }
+    },
+
+    "protocol_handlers": [{
+            "protocol": "tel",
+            "name": "Telephone Links",
+            "uriTemplate": "index.html?tel=%s"
+        }
+    ]
+}

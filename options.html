@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <script src="js/options.js"></script>
+  </head>
+
+  <body style="margin: 10px;">
+      <h1>CSTA over HTTP settings</h1>
+    <form id="settingForm">
+        <table>
+            <tbody>
+                <tr>
+                    <td><label for="url">telephone CSTA URL:</label></td>
+                    <td><input type="text" id="url" placeholder="http://192.168.1.55/csta" style="width: 300px" /></td>
+                </tr>
+                <tr>
+                    <td><label for="user">telephone username:</label></td>
+                    <td><input type="text" id="user" placeholder="" style="width: 300px" /></td>
+                </tr>
+                <tr>
+                    <td><label for="password">telephone password:</label></td>
+                    <td><input type="password" id="password" placeholder="" style="width: 300px" /></td>
+                </tr>
+                <tr>
+                    <td><label for="callingDevice">calling device:</label></td>
+                    <td><input type="text" id="callingDevice" style="width: 300px" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><label>do not prompt before calling: <input type="checkbox" id="doNotPrompt" placeholder="" style="margin: 0 5px;" /></label></td>
+                </tr>
+            </tbody>
+        </table>
+      <button type="submit" style="margin-top:10px;">Save</button>
+    </form>
+    <p style="font-size: 0.8em">&copy; 2022 <a href="https://www.netas.ch" target="_blank">Netas AG</a></p>
+  </body>
+</html>

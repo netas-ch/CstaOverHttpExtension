@@ -1,0 +1,144 @@
+/*
+Copyright © 2022 Netas Ltd., Switzerland.
+All rights reserved.
+@author  Lukas Buchs, lukas.buchs@netas.ch
+@date    2022-02-07
+*/
+/*
+    Created on : 07.02.2022, 11:01:27
+    Author     : Lukas Buchs
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI Light", Arial, sans-serif;
+    background-color: #B8D45D;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border: 0;
+    border-radius: 20px;
+    color: #333333;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #15180a;
+    }
+}
+
+body > div {
+    background-color: #F6F279;
+    display:inline-block;
+    margin: 10px;
+    padding: 5px 20px;
+    border-radius: 20px;
+    width: 335px;
+}
+
+@media (prefers-color-scheme: dark) {
+    body > div {
+        background-color: #4d4c26;
+    }
+}
+
+body > div h1, body > div h2 {
+    color: #65D45D;
+    margin-bottom: 2px;
+}
+
+body > div input {
+    background: transparent;
+    border: 0;
+    border-left: 1px solid #65D45D;
+    border-bottom: 1px solid #65D45D;
+    padding: 10px;
+    outline: 0;
+    font-size: 1.2em;
+    width: 220px
+}
+
+body > div button {
+    background-color: #A5EB74;
+    cursor: pointer;
+    font-size: 1.2em;
+    border: 0;
+    padding: 10px;
+}
+body > div button:hover {
+    background-color: #82b95b;
+}
+
+@media (prefers-color-scheme: dark) {
+    body > div h1, body > div h2 {
+        color: #efefef;
+    }
+    body > div input {
+        border-color: #10210f;
+        color: white;
+    }
+
+    body > div button {
+        background-color:#10210f;
+        color: #efefef;
+    }
+
+    body > div button:hover {
+        background-color: black;
+    }
+}
+
+
+body > div .error, body > div .message {
+    margin: 15px 0;
+    padding: 8px 18px;
+    background-color: #EB9088;
+    border-radius: 20px;
+}
+
+body > div .message {
+    background-color: #84E3CA;
+}
+
+@media (prefers-color-scheme: dark) {
+    body > div .error {
+        background-color: #690000;
+        color: #efefef;
+    }
+    body > div .message {
+        background-color: #000030;
+        color: #efefef;
+    }
+
+}
+
+
+body > div h2 {
+    margin-top: 20px;
+}
+
+
+p.footer {
+    margin-top: 20px;
+    font-size: 0.6em;
+    color: #B8D45D;
+}
+p.footer a {
+     text-decoration: none;
+     color: inherit;
+}
+
+@media (prefers-color-scheme: dark) {
+    p.footer {
+        color: #15180a;
+    }
+}
