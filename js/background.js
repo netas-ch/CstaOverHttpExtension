@@ -30,7 +30,7 @@
             "use strict";
             browser.browserAction.onClicked.addListener(function () {
                 browser.tabs.create({
-                    url: browser.extension.getURL("index.html")
+                    url: browser.runtime.getURL("index.html")
                 })
             }),
             browser.tabs.onRemoved.addListener(function (tabId, removeInfo) {

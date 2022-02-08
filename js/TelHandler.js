@@ -103,7 +103,7 @@ class TelHandler {
         let value = this._nrField.value.trim(), nr=this._cleanupNumber(value);
         if (nr) {
             this._makeCall(nr);
-            
+
         } else if (!nr && value) {
             this._showError(new Error('invalid number'));
         }
@@ -133,46 +133,43 @@ class TelHandler {
     }
 
     _showMessage(title, msg) {
-        if (msg) {
-            let errDiv = document.createElement('div');
-            errDiv.className = 'message';
-            errDiv.style.display = '';
-            errDiv.innerHTML = '<h3>' + this._escapeHtml(title) + '</h3><p>' + this._escapeHtml(msg) + '<p>';
+        let msgDiv = document.createElement('div');
+        msgDiv.className = 'message';
+        msgDiv.style.display = '';
 
-            if (this._msgDiv.hasChildNodes()) {
-                this._msgDiv.insertBefore(errDiv, this._msgDiv.firstChild);
-            } else {
-                this._msgDiv.appendChild(errDiv);
-            }
+        let msgDivTitle = document.createElement('h3');
+        msgDivTitle.textContent = title;
+        msgDiv.appendChild(msgDivTitle);
+
+        let msgDivText = document.createElement('p');
+        msgDivText.textContent = msg;
+        msgDiv.appendChild(msgDivText);
+
+        if (this._msgDiv.hasChildNodes()) {
+            this._msgDiv.insertBefore(msgDiv, this._msgDiv.firstChild);
+        } else {
+            this._msgDiv.appendChild(msgDiv);
         }
     }
 
     _showError(err) {
-        if (err) {
-            let errDiv = document.createElement('div');
-            errDiv.className = 'error';
-            errDiv.style.display = '';
-            errDiv.innerHTML = '<h3>Error</h3><p>' + this._escapeHtml(err.message ? err.message : err) + '<p>';
+        let errDiv = document.createElement('div');
+        errDiv.className = 'error';
+        errDiv.style.display = '';
 
-            if (this._msgDiv.hasChildNodes()) {
-                this._msgDiv.insertBefore(errDiv, this._msgDiv.firstChild);
-            } else {
-                this._msgDiv.appendChild(errDiv);
-            }
+        let errDivTitle = document.createElement('h3');
+        errDivTitle.textContent = 'error';
+        errDiv.appendChild(errDivTitle);
+
+        let errDivText = document.createElement('p');
+        errDivText.textContent = err.message ? err.message : (err.toString ? err.toString() : err);
+        errDiv.appendChild(errDivText);
+
+        if (this._msgDiv.hasChildNodes()) {
+            this._msgDiv.insertBefore(errDiv, this._msgDiv.firstChild);
+        } else {
+            this._msgDiv.appendChild(errDiv);
         }
     }
 
-    _escapeHtml(text) {
-        if (typeof text !== 'string') {
-            text = text.toString ? text.toString() : new String(text);
-        }
-        let map = {
-          '&': '&amp;',
-          '<': '&lt;',
-          '>': '&gt;',
-          '"': '&quot;',
-          "'": '&#039;'
-        };
-        return text.replace(/[&<>"']/g, function(m) { return map[m]; });
-    }
 }
