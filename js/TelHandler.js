@@ -23,6 +23,14 @@ class TelHandler {
             // GET Parameter
             let tel = this._getGetParameter('tel');
             if (tel) {
+
+                // URL-Codierte URL?
+                if (tel.substr(0,4) === 'tel:') {
+                    tel = decodeURIComponent(tel.substr(4));
+                } else if (tel.substr(0,7) === 'callto:') {
+                    tel = decodeURIComponent(tel.substr(7));
+                }
+
                 this._nrField.value = this._formatNumber(this._cleanupNumber(tel));
                 this._autoCallAndClose = this._nrField.value !== '';
             }
