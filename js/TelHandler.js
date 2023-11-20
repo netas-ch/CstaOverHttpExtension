@@ -35,6 +35,9 @@ class TelHandler {
                 this._autoCallAndClose = this._nrField.value !== '';
             }
 
+            this._nrField.focus();
+            this._nrField.addEventListener('keypress', (e) => { this._onNrFieldKeyPress(e); });
+
             // Settings laden
             var gettingItem = browser.storage.sync.get();
             gettingItem.then((res) => {
@@ -119,6 +122,17 @@ class TelHandler {
 
     _onNrFieldBlur() {
         this._nrField.value = this._formatNumber(this._cleanupNumber(this._nrField.value));
+    }
+
+    _onNrFieldKeyPress(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+
+            let value = this._nrField.value.trim(), nr=this._cleanupNumber(value);
+            if (nr) {
+                this._makeCall(nr);
+            }
+        }
     }
 
 
