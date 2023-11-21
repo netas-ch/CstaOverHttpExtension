@@ -32,15 +32,6 @@
                 browser.tabs.create({
                     url: browser.runtime.getURL("index.html")
                 })
-            }),
-            browser.tabs.onRemoved.addListener(function (tabId, removeInfo) {
-                console.log("[background.js][handleRemoved] TabId: " + tabId, removeInfo),
-                browser.runtime.sendMessage({
-                    target: "index",
-                    action: "http-callto-tab-closed",
-                    type: "boardcast",
-                    tabId: tabId
-                })
             })
         }, {}
     ]

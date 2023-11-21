@@ -2,7 +2,7 @@
     "name": "Tel-Links: CSTA over HTTP",
     "description": "open tel-protocol links with a «CSTA over HTTP» - compatible phone",
     "homepage_url": "https://github.com/netas-ch/CstaOverHttpExtension",
-    "version": "1.5",
+    "version": "1.6",
     "manifest_version": 3,
 
     "action": {
@@ -47,7 +47,7 @@
     "browser_specific_settings": {
         "gecko": {
             "id": "CstaOverHttpExtension@netas.ch",
-            "strict_min_version": "90.0"
+            "strict_min_version": "118.0"
         }
     },
 

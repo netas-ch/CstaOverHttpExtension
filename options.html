@@ -22,6 +22,10 @@
             padding: 5px 10px;
         }
         
+        button#permissions {
+            background-color: #ff6666;
+        }
+        
         p a {
             color: black;
             text-decoration: none;
@@ -49,16 +53,19 @@
                 border: 0;
             }
             
+            button#permissions {
+                background-color: #660000;
+            }
+            
             p a {
                 color: white;
             }
             
         }
     </style>
-  </head>
-  <body style="margin: 10px;">
-      <h1>CSTA over HTTP settings</h1>
-    <form id="settingForm">
+    </head>
+    <body style="margin: 10px;">
+        <h1>CSTA over HTTP settings</h1>
         <table>
             <tbody>
                 <tr>
@@ -82,8 +89,8 @@
                 </tr>
             </tbody>
         </table>
-      <button type="submit" style="margin-top:10px;">Save</button>
-    </form>
-    <p style="font-size: 0.8em">&copy; 2023 <a href="https://www.netas.ch" target="_blank">Netas AG</a></p>
-  </body>
+        <button id="savebtn" style="margin-top:10px;">save</button>
+        <button id="permissions" style="margin-top:10px;display:none;">save & grant permissions</button>
+        <p style="font-size: 0.8em">&copy; 2023 <a href="https://www.netas.ch" target="_blank">Netas AG</a></p>
+    </body>
 </html>
