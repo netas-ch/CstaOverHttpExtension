@@ -21,6 +21,8 @@ function saveOptions(e) {
         doNotPrompt: document.getElementById('doNotPrompt').checked
     });
     e.preventDefault();
+
+    window.alert('settings saved');
 }
 
 function restoreOptions() {
